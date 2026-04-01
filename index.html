@@ -60,12 +60,174 @@
     .usage-card { background: var(--color-surface-muted); border-radius: var(--radius-lg); padding: var(--space-8); margin-top: var(--space-6); }
     .usage-card hr { border: none; border-top: 1px solid var(--color-grey-300); margin: var(--space-6) 0; }
     .usage-card .mono-detail { columns: 2; column-gap: var(--space-8); }
+
+    /* Logo showcase */
+    .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-6); }
+    .logo-card {
+      border: 1px solid var(--color-grey-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .logo-card__preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-8) var(--space-6);
+      min-height: 160px;
+    }
+    .logo-card__preview img { max-width: 100%; max-height: 120px; object-fit: contain; }
+    .logo-card__preview--dark { background: var(--color-grey-700); }
+    .logo-card__preview--light { background: var(--color-surface); }
+    .logo-card__preview--muted { background: var(--color-surface-muted); }
+    .logo-card__info {
+      padding: var(--space-3) var(--space-4);
+      border-top: 1px solid var(--color-grey-100);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+    }
+    .logo-card__info strong { color: var(--color-text); font-weight: 500; display: block; margin-bottom: 2px; }
+    .logo-card__info span { display: inline-block; margin-right: var(--space-3); }
+    .logo-formats { display: flex; gap: var(--space-2); margin-top: var(--space-2); }
+    .logo-formats a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      background: var(--color-grey-100);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    .logo-formats a:hover { background: var(--color-primary-light); }
   </style>
 </head>
 <body>
 
   <h1>BRB Design System</h1>
   <p class="subtitle">Boilerplate tokens, colors, and component samples — sourced from Figma Brand Guidelines.</p>
+
+  <!-- ═══════════════════════════════════════
+       LOGOS
+       ═══════════════════════════════════════ -->
+  <h2>Logos</h2>
+
+  <h3>Primary Marks</h3>
+  <div class="logo-grid">
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--light">
+        <img src="logos/BRB-Logo-LittleB.svg" alt="BRB Little B logo">
+      </div>
+      <div class="logo-card__info">
+        <strong>Little B</strong>
+        Minimal lettermark / favicon
+        <div class="logo-formats">
+          <a href="logos/BRB-Logo-LittleB.svg">svg</a>
+          <a href="logos/BRB-Logo-LittleB.png">png</a>
+          <a href="logos/BRB-Logo-LittleB@4x.png">png @4x</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--light">
+        <img src="logos/BRB-Logo-BStamp.svg" alt="BRB B Stamp logo">
+      </div>
+      <div class="logo-card__info">
+        <strong>B Stamp</strong>
+        Primary mark — circular badge
+        <div class="logo-formats">
+          <a href="logos/BRB-Logo-BStamp.svg">svg</a>
+          <a href="logos/BRB-Logo-BStamp.png">png</a>
+          <a href="logos/BRB-Logo-BStamp@4x.png">png @4x</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--light">
+        <img src="logos/BRB-Logo-BStampTagline.svg" alt="BRB B Stamp with tagline">
+      </div>
+      <div class="logo-card__info">
+        <strong>B Stamp + Tagline</strong>
+        Primary mark with tagline lockup
+        <div class="logo-formats">
+          <a href="logos/BRB-Logo-BStampTagline.svg">svg</a>
+          <a href="logos/BRB-Logo-BStampTagline.png">png</a>
+          <a href="logos/BRB-Logo-BStampTagline@4x.png">png @4x</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--light">
+        <img src="logos/BRB-Logo-BadgeSmall.svg" alt="BRB small badge logo">
+      </div>
+      <div class="logo-card__info">
+        <strong>Badge Small</strong>
+        Compact badge for tight spaces
+        <div class="logo-formats">
+          <a href="logos/BRB-Logo-BadgeSmall.svg">svg</a>
+          <a href="logos/BRB-Logo-BadgeSmall.png">png</a>
+          <a href="logos/BRB-Logo-BadgeSmall@4x.png">png @4x</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--light">
+        <img src="logos/BRB-Logo-BadgeFull.svg" alt="BRB full badge logo">
+      </div>
+      <div class="logo-card__info">
+        <strong>Badge Full</strong>
+        Full circular badge with text
+        <div class="logo-formats">
+          <a href="logos/BRB-Logo-BadgeFull.svg">svg</a>
+          <a href="logos/BRB-Logo-BadgeFull.png">png</a>
+          <a href="logos/BRB-Logo-BadgeFull@4x.png">png @4x</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <h3>On Muted Background</h3>
+  <div class="logo-grid">
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--muted">
+        <img src="logos/BRB-Logo-LittleB.svg" alt="BRB Little B on muted">
+      </div>
+      <div class="logo-card__info">
+        <strong>Little B</strong>
+        On muted surface
+      </div>
+    </div>    
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--muted">
+        <img src="logos/BRB-Logo-BStamp.svg" alt="BRB B Stamp on muted">
+      </div>
+      <div class="logo-card__info">
+        <strong>B Stamp</strong>
+        On muted surface
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-card__preview logo-card__preview--muted">
+        <img src="logos/BRB-Logo-BadgeFull.svg" alt="BRB Badge Full on muted">
+      </div>
+      <div class="logo-card__info">
+        <strong>Badge Full</strong>
+        On muted surface
+      </div>
+    </div>
+
+  </div>
 
   <!-- ═══════════════════════════════════════
        COLORS
