@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRB Design System</title>
+  <link rel="stylesheet" href="components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    body { padding: var(--space-10); max-width: 960px; margin: 0 auto; }
+
+    h1 { font-size: 2.5rem; margin-bottom: var(--space-2); }
+    h2 { font-size: 1.5rem; margin-top: var(--space-12); margin-bottom: var(--space-4); border-bottom: 2px solid var(--color-grey-100); padding-bottom: var(--space-2); }
+    h3 { font-size: 1rem; margin-top: var(--space-6); margin-bottom: var(--space-3); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); font-size: 0.75rem; }
+    p.subtitle { color: var(--color-text-muted); margin-bottom: var(--space-8); }
+
+    /* Color grid */
+    .color-group { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6); }
+    .swatch {
+      width: 120px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-grey-100);
+    }
+    .swatch__color { height: 80px; }
+    .swatch__label {
+      padding: var(--space-2) var(--space-3);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
+    .swatch__label span { display: block; color: var(--color-text-muted); }
+
+    /* Button rows */
+    .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+
+    /* Token table */
+    .token-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: var(--space-8); }
+    .token-table th, .token-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-grey-100); }
+    .token-table th { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); }
+    .token-table code { font-family: var(--font-mono); font-size: 0.8rem; background: var(--color-grey-100); padding: 2px 6px; border-radius: var(--radius-sm); }
+    .token-table .preview { width: 32px; height: 32px; border-radius: var(--radius-sm); border: 1px solid var(--color-grey-100); }
+
+    /* Typography showcase */
+    .type-specimen { margin-bottom: var(--space-6); }
+    .type-specimen__sample { margin-bottom: var(--space-1); }
+    .type-specimen__meta {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .type-specimen__meta span { white-space: nowrap; }
+    .type-pair { display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: baseline; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-grey-100); }
+    .type-pair__label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; }
+    .usage-card { background: var(--color-surface-muted); border-radius: var(--radius-lg); padding: var(--space-8); margin-top: var(--space-6); }
+    .usage-card hr { border: none; border-top: 1px solid var(--color-grey-300); margin: var(--space-6) 0; }
+    .usage-card .mono-detail { columns: 2; column-gap: var(--space-8); }
+  </style>
+</head>
+<body>
+
+  <h1>BRB Design System</h1>
+  <p class="subtitle">Boilerplate tokens, colors, and component samples — sourced from Figma Brand Guidelines.</p>
+
+  <!-- ═══════════════════════════════════════
+       COLORS
+       ═══════════════════════════════════════ -->
+  <h2>Color Palette</h2>
+
+  <h3>Orange (Primary)</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-orange-100)"></div><div class="swatch__label">orange-100<span>#ffdddb</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-orange-200)"></div><div class="swatch__label">orange-200<span>#ffa59d</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-orange-300)"></div><div class="swatch__label">orange-300<span>#ff634a</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-orange-400)"></div><div class="swatch__label">orange-400<span>#d43800</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-orange-500)"></div><div class="swatch__label">orange-500<span>#962500</span></div></div>
+  </div>
+
+  <h3>Pink (Accent)</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-pink-100)"></div><div class="swatch__label">pink-100<span>#ffd3dd</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-pink-300)"></div><div class="swatch__label">pink-300<span>#ff4a8b</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-pink-400)"></div><div class="swatch__label">pink-400<span>#d40067</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-pink-600)"></div><div class="swatch__label">pink-600<span>#5a0027</span></div></div>
+  </div>
+
+  <h3>Green (Secondary)</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-green-100)"></div><div class="swatch__label">green-100<span>#4affbd</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-green-200)"></div><div class="swatch__label">green-200<span>#00d598</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-green-500)"></div><div class="swatch__label">green-500<span>#00593e</span></div></div>
+  </div>
+
+  <h3>Blue (Tertiary)</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blue-100)"></div><div class="swatch__label">blue-100<span>#d1dcff</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blue-200)"></div><div class="swatch__label">blue-200<span>#97b3ff</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blue-300)"></div><div class="swatch__label">blue-300<span>#4a8cff</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blue-400)"></div><div class="swatch__label">blue-400<span>#0068d4</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blue-500)"></div><div class="swatch__label">blue-500<span>#004694</span></div></div>
+  </div>
+
+  <h3>Purple</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-purple-300)"></div><div class="swatch__label">purple-300<span>#9293e2</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-purple-400)"></div><div class="swatch__label">purple-400<span>#696ad4</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-purple-500)"></div><div class="swatch__label">purple-500<span>#3f42be</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-purple-600)"></div><div class="swatch__label">purple-600<span>#24267d</span></div></div>
+  </div>
+
+  <h3>Yellow</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-yellow-100)"></div><div class="swatch__label">yellow-100<span>#ffeedd</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-yellow-base)"></div><div class="swatch__label">yellow-base<span>#ffbe4a</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-yellow-700)"></div><div class="swatch__label">yellow-700<span>#261800</span></div></div>
+  </div>
+
+  <h3>Grey</h3>
+  <div class="color-group">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-grey-100)"></div><div class="swatch__label">grey-100<span>#e6e4e4</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-grey-300)"></div><div class="swatch__label">grey-300<span>#9f9493</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-grey-700)"></div><div class="swatch__label">grey-700<span>#131010</span></div></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TYPOGRAPHY
+       ═══════════════════════════════════════ -->
+  <h2>Typography</h2>
+
+  <h3>Font Families</h3>
+  <div class="type-pair">
+    <div class="type-pair__label">Display</div>
+    <div style="font-family:var(--font-display); font-size:1.25rem;">Hanken Grotesk — ABCDEFGHIJKLM abcdefghijklm 0123456789</div>
+  </div>
+  <div class="type-pair">
+    <div class="type-pair__label">Mono</div>
+    <div style="font-family:var(--font-mono); font-size:1rem;">JetBrains Mono — ABCDEFGHIJKLM abcdefghijklm 0123456789</div>
+  </div>
+
+  <h3>Type Scale</h3>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-display">Display — 48px</div>
+    <div class="type-specimen__meta">
+      <span>.type-display</span>
+      <span>Hanken Grotesk ExtraBold</span>
+      <span>48 / 1.1</span>
+      <span>-0.02em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-h1">Heading 1 — 36px</div>
+    <div class="type-specimen__meta">
+      <span>.type-h1</span>
+      <span>Hanken Grotesk ExtraBold</span>
+      <span>36 / 1.1</span>
+      <span>-0.02em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-h2">Heading 2 — 24px</div>
+    <div class="type-specimen__meta">
+      <span>.type-h2</span>
+      <span>Hanken Grotesk ExtraBold</span>
+      <span>24 / 1.083</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-h3">Heading 3 — 20px</div>
+    <div class="type-specimen__meta">
+      <span>.type-h3</span>
+      <span>Hanken Grotesk Bold</span>
+      <span>20 / 1.083</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-h4">Heading 4 — 16px</div>
+    <div class="type-specimen__meta">
+      <span>.type-h4</span>
+      <span>Hanken Grotesk SemiBold</span>
+      <span>16 / 1.083</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-body">Body — 14px · Nunc faucibus urna ac vestibulum suscipit. Curabitur vel id erat dapibus volutpat non at elit. Vestibulum vulputate euismod magna sit amet mattis.</div>
+    <div class="type-specimen__meta">
+      <span>.type-body</span>
+      <span>Hanken Grotesk Regular</span>
+      <span>14 / 1.286</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-body-medium">Body Medium — 14px · Duis tempus metus a elit convallis pretium. Curabitur euismod et lorem et ornare.</div>
+    <div class="type-specimen__meta">
+      <span>.type-body-medium</span>
+      <span>Hanken Grotesk Medium</span>
+      <span>14 / 1.286</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-sm">Small — 12px · Suspendisse pellentesque porttitor felis scelerisque feugiat.</div>
+    <div class="type-specimen__meta">
+      <span>.type-sm</span>
+      <span>Hanken Grotesk Regular</span>
+      <span>12 / 1.286</span>
+      <span>-0.014em</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-mono">Mono Detail — 10px · Model XR-2400 Mk II · Serial No. 004829-77A-2026</div>
+    <div class="type-specimen__meta">
+      <span>.type-mono</span>
+      <span>JetBrains Mono Regular</span>
+      <span>10 / 1.6</span>
+      <span>uppercase</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-mono-sm">Mono Small — 12px · Battery - 4,200 mAh · Input - 100–240V ~ 50/60Hz</div>
+    <div class="type-specimen__meta">
+      <span>.type-mono-sm</span>
+      <span>JetBrains Mono Regular</span>
+      <span>12 / 1.6</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__sample type-mono-base">Mono Base — 14px · Output - 19.5V 3.33A · Storage - 1TB (usable 931GB)</div>
+    <div class="type-specimen__meta">
+      <span>.type-mono-base</span>
+      <span>JetBrains Mono Regular</span>
+      <span>14 / 1.286</span>
+    </div>
+  </div>
+
+  <h3>Usage Example (from Figma)</h3>
+  <div class="usage-card">
+    <p class="type-h2" style="margin-bottom:var(--space-4);">Lorem ipsum dolor sit,<br>consectetur adipiscing elit.</p>
+    <p class="type-body" style="max-width:480px;">Nunc faucibus urna ac vestibulum suscipit. Curabitur vel id erat dapibus volutpat non at elit. Vestibulum vulputate euismod magna sit amet mattis. Duis tempus metus a elit convallis pretium. Curabitur euismod et lorem et ornare. Nunc commodo risus metus, in ornare metus semper vitae.</p>
+    <hr>
+    <div class="mono-detail">
+      <div class="type-mono">
+        Model XR-2400 Mk II<br>
+        Weight - 2.75 kg (6.06 lb)<br>
+        Dimensions - 14.2" × 9.8" × 0.63"<br>
+        Battery - 4,200 mAh<br>
+        Input - 100–240V ~ 50/60Hz
+      </div>
+      <div class="type-mono">
+        Output - 19.5V 3.33A<br>
+        Operating Temp - −10°C to 45°C<br>
+        Storage - 1TB (usable 931GB)<br>
+        Warranty - 2 years (24 months)<br>
+        Serial No. - 004829-77A-2026
+      </div>
+    </div>
+  </div>
+
+  <h3>Type Token Reference</h3>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--text-display</code></td><td>3rem (48px)</td><td>Hero headlines, splash screens</td></tr>
+      <tr><td><code>--text-h1</code></td><td>2.25rem (36px)</td><td>Page titles</td></tr>
+      <tr><td><code>--text-h2</code></td><td>1.5rem (24px)</td><td>Section headings</td></tr>
+      <tr><td><code>--text-h3</code></td><td>1.25rem (20px)</td><td>Sub-section headings</td></tr>
+      <tr><td><code>--text-h4</code></td><td>1rem (16px)</td><td>Card titles, labels</td></tr>
+      <tr><td><code>--text-body</code></td><td>0.875rem (14px)</td><td>Body copy, paragraphs</td></tr>
+      <tr><td><code>--text-sm</code></td><td>0.75rem (12px)</td><td>Captions, footnotes</td></tr>
+      <tr><td><code>--text-xs</code></td><td>0.625rem (10px)</td><td>Mono detail, fine print</td></tr>
+      <tr><td><code>--font-display</code></td><td>Hanken Grotesk</td><td>Headings, body, UI text</td></tr>
+      <tr><td><code>--font-mono</code></td><td>JetBrains Mono</td><td>Data, specs, code, detail text</td></tr>
+      <tr><td><code>--weight-extrabold</code></td><td>800</td><td>Headings (Display–H2)</td></tr>
+      <tr><td><code>--weight-bold</code></td><td>700</td><td>H3, emphasis</td></tr>
+      <tr><td><code>--weight-semibold</code></td><td>600</td><td>H4, buttons, labels</td></tr>
+      <tr><td><code>--weight-medium</code></td><td>500</td><td>Body emphasis</td></tr>
+      <tr><td><code>--weight-regular</code></td><td>400</td><td>Body, mono, small text</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════
+       BUTTONS
+       ═══════════════════════════════════════ -->
+  <h2>Buttons</h2>
+
+  <h3>Filled</h3>
+  <div class="btn-row">
+    <button class="btn btn--primary">Primary</button>
+    <button class="btn btn--accent">Accent</button>
+    <button class="btn btn--secondary">Secondary</button>
+    <button class="btn btn--tertiary">Tertiary</button>
+    <button class="btn btn--purple">Purple</button>
+  </div>
+
+  <h3>Outline</h3>
+  <div class="btn-row">
+    <button class="btn btn--outline-primary">Primary</button>
+    <button class="btn btn--outline-accent">Accent</button>
+    <button class="btn btn--outline-secondary">Secondary</button>
+    <button class="btn btn--outline-tertiary">Tertiary</button>
+  </div>
+
+  <h3>Ghost</h3>
+  <div class="btn-row">
+    <button class="btn btn--ghost">Ghost Button</button>
+  </div>
+
+  <h3>Sizes</h3>
+  <div class="btn-row">
+    <button class="btn btn--primary btn--sm">Small</button>
+    <button class="btn btn--primary">Default</button>
+    <button class="btn btn--primary btn--lg">Large</button>
+  </div>
+
+  <h3>Pill</h3>
+  <div class="btn-row">
+    <button class="btn btn--primary btn--pill">Primary Pill</button>
+    <button class="btn btn--accent btn--pill">Accent Pill</button>
+    <button class="btn btn--outline-tertiary btn--pill">Outline Pill</button>
+  </div>
+
+  <h3>Disabled</h3>
+  <div class="btn-row">
+    <button class="btn btn--primary" disabled>Disabled</button>
+    <button class="btn btn--outline-primary" disabled>Disabled Outline</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SEMANTIC TOKEN REFERENCE
+       ═══════════════════════════════════════ -->
+  <h2>Semantic Token Reference</h2>
+
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Preview</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--color-primary</code></td><td>orange-300</td><td><div class="preview" style="background:var(--color-primary)"></div></td><td>CTAs, primary actions</td></tr>
+      <tr><td><code>--color-primary-light</code></td><td>orange-100</td><td><div class="preview" style="background:var(--color-primary-light)"></div></td><td>Hover tints, highlights</td></tr>
+      <tr><td><code>--color-primary-dark</code></td><td>orange-500</td><td><div class="preview" style="background:var(--color-primary-dark)"></div></td><td>Active states</td></tr>
+      <tr><td><code>--color-accent</code></td><td>pink-300</td><td><div class="preview" style="background:var(--color-accent)"></div></td><td>Accents, badges, links</td></tr>
+      <tr><td><code>--color-secondary</code></td><td>green-200</td><td><div class="preview" style="background:var(--color-secondary)"></div></td><td>Success, confirmations</td></tr>
+      <tr><td><code>--color-tertiary</code></td><td>blue-300</td><td><div class="preview" style="background:var(--color-tertiary)"></div></td><td>Info, secondary actions</td></tr>
+      <tr><td><code>--color-text</code></td><td>grey-700</td><td><div class="preview" style="background:var(--color-text)"></div></td><td>Body copy</td></tr>
+      <tr><td><code>--color-text-muted</code></td><td>grey-300</td><td><div class="preview" style="background:var(--color-text-muted)"></div></td><td>Captions, hints</td></tr>
+      <tr><td><code>--color-surface-muted</code></td><td>grey-100</td><td><div class="preview" style="background:var(--color-surface-muted)"></div></td><td>Card backgrounds</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

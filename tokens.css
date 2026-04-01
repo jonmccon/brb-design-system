@@ -1,0 +1,119 @@
+/* ============================================
+   BRB Design System — Design Tokens
+   Source: Figma "BRB - Brand Guidelines"
+   ============================================ */
+
+:root {
+  /* ── Primary: Orange ── */
+  --color-orange-100: #ffdddb;
+  --color-orange-200: #ffa59d;
+  --color-orange-300: #ff634a;
+  --color-orange-400: #d43800;
+  --color-orange-500: #962500;
+
+  /* ── Primary: Pink ── */
+  --color-pink-100: #ffd3dd;
+  --color-pink-300: #ff4a8b;
+  --color-pink-400: #d40067;
+  --color-pink-600: #5a0027;
+
+  /* ── Secondary: Green ── */
+  --color-green-100: #4affbd;
+  --color-green-200: #00d598;
+  --color-green-500: #00593e;
+
+  /* ── Tertiary: Blue ── */
+  --color-blue-100: #d1dcff;
+  --color-blue-200: #97b3ff;
+  --color-blue-300: #4a8cff;
+  --color-blue-400: #0068d4;
+  --color-blue-500: #004694;
+
+  /* ── Purple ── */
+  --color-purple-300: #9293e2;
+  --color-purple-400: #696ad4;
+  --color-purple-500: #3f42be;
+  --color-purple-600: #24267d;
+
+  /* ── Yellow ── */
+  --color-yellow-100: #ffeedd;
+  --color-yellow-base: #ffbe4a;
+  --color-yellow-700: #261800;
+
+  /* ── Grey ── */
+  --color-grey-100: #e6e4e4;
+  --color-grey-300: #9f9493;
+  --color-grey-700: #131010;
+
+  /* ── Semantic aliases ── */
+  --color-primary:        var(--color-orange-300);
+  --color-primary-light:  var(--color-orange-100);
+  --color-primary-dark:   var(--color-orange-500);
+
+  --color-accent:         var(--color-pink-300);
+  --color-accent-dark:    var(--color-pink-600);
+
+  --color-secondary:      var(--color-green-200);
+  --color-secondary-light:var(--color-green-100);
+  --color-secondary-dark: var(--color-green-500);
+
+  --color-tertiary:       var(--color-blue-300);
+  --color-tertiary-dark:  var(--color-blue-500);
+
+  --color-surface:        #ffffff;
+  --color-surface-muted:  var(--color-grey-100);
+  --color-text:           var(--color-grey-700);
+  --color-text-muted:     var(--color-grey-300);
+  --color-text-inverse:   #ffffff;
+
+  /* ── Typography ── */
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* ── Type scale (from Figma Usage frame) ── */
+  --text-display:   3rem;      /* 48px  */
+  --text-h1:        2.25rem;   /* 36px  */
+  --text-h2:        1.5rem;    /* 24px — Figma heading */
+  --text-h3:        1.25rem;   /* 20px  */
+  --text-h4:        1rem;      /* 16px  */
+  --text-body:      0.875rem;  /* 14px — Figma body */
+  --text-sm:        0.75rem;   /* 12px  */
+  --text-xs:        0.625rem;  /* 10px — Figma mono detail */
+
+  --leading-display: 1.1;
+  --leading-heading: 1.083;    /* 26/24 from Figma */
+  --leading-body:    1.286;    /* 18/14 from Figma */
+  --leading-mono:    1.6;      /* 16/10 from Figma */
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: -0.014em; /* -0.196px at 14px from Figma */
+  --tracking-wide:   0.08em;
+
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;     /* Figma heading weight */
+
+  /* ── Spacing scale (4px base) ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Radii ── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+}
